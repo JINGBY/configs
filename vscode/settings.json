@@ -1,7 +1,71 @@
 {
-  // open json editor for settings
-  //"workbench.settings.editor": "json",
+  // Open settings.json when editing settings
+  "workbench.settings.editor": "json",
 
+  // Icon Theme
+  "workbench.iconTheme": "symbols",
+
+  // Typeface
+  "editor.fontFamily": "'SF Mono', monospace",
+  "editor.fontWeight": "normal",
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 12,
+
+  // Editor
+  "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.guides.indentation": false,
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.occurrencesHighlight": "off",
+  "editor.lineDecorationsWidth": 40, // Left padding before code
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  // Layout
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "workbench.tree.indent": 16,
+  "workbench.navigationControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "explorer.compactFolders": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.activityBar.location": "default",
+  "git.decorations.enabled": false,
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+
+  // Hide scrollbars and rulers
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  // "editor.hideCursorInOverviewRuler": true,
+
+  // Minimap
+  "editor.minimap.renderCharacters": true,
+  "editor.minimap.enabled": false,
+
+  // Custom styling
+  "custom-ui-style.font.sansSerif": "Bricolage Grotesque",
+  //"custom-ui-style.font.monospace": "CaskaydiaMono Nerd Font",
+  "window.menuBarVisibility": "compact",
+
+  // File exlucsions
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.vscode": true,
+    "**/*.gd.uid": true // Godot script thingy
+  },
+
+  // Languages, formatting
   "python.pythonPath": "C:\\Users\\Hannes\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
   "liveServer.settings.donotVerifyTags": true,
   "liveServer.settings.donotShowInfoMsg": true,
@@ -26,41 +90,25 @@
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
 
-  // Theme
-  "workbench.colorTheme": "Min Dark",
-
-  // Typeface
-  "editor.fontSize": 13,
-  "terminal.integrated.fontSize": 12,
-
-  // Icon Theme
-  "workbench.iconTheme": "symbols",
-
-  // File exlucsions
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.vscode": true
-  },
-
-  //Prettier
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-
-  // Misc
-  "workbench.startupEditor": "none",
-  "explorer.compactFolders": false,
-  "editor.tabSize": 2,
-  "workbench.tree.indent": 12,
-  "editor.linkedEditing": true,
-  "breadcrumbs.filePath": "off",
-  "files.trimTrailingWhitespace": true,
   "[markdown]": {
     "files.trimTrailingWhitespace": false
   },
-  "svelte.enable-ts-plugin": true
-  //"editor.bracketPairColorization.enabled": true,
-  //"editor.guides.bracketPairs": true,
+  "svelte.enable-ts-plugin": true,
+  "supermaven.enable": {
+    "*": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "\"svelte\"": "\"html\""
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+
+  // Misc
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "extensions.ignoreRecommendations": true,
+  "workbench.colorTheme": "Min Dark",
+  "godotTools.editorPath.godot4": "C:\\Users\\Hannes\\godot-v4.4.1\\Godot_v4.4.1-stable_win64.exe",
+  "godotTools.lsp.serverPort": 6005,
 }
