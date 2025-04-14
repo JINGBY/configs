@@ -110,5 +110,5 @@
   "extensions.ignoreRecommendations": true,
   "workbench.colorTheme": "Min Dark",
   "godotTools.editorPath.godot4": "C:\\Users\\Hannes\\godot-v4.4.1\\Godot_v4.4.1-stable_win64.exe",
-  "godotTools.lsp.serverPort": 6005,
+  "godotTools.lsp.serverPort": 6005
 }

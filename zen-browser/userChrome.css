@@ -1,11 +1,12 @@
 * {
-  font-family: 'Geist', monospace !important;
+  font-family: 'Bricolage Grotesque', 'Geist', monospace !important;
   color: #dbd9d5 !important;
   font-weight: 500 !important;
 }
 
 .tab-content {
-  padding-block: 1em !important;
+  padding-block: 0.7em !important;
+  font-size: 15px !important;
 }
 
 #vertical-pinned-tabs-container {
@@ -30,7 +31,8 @@
 
 /* Center the search bar better */
 #urlbar[open][zen-floating-urlbar="true"] {
-  left: calc(50% - var(--urlbar-width) * 1.5) !important;
+  top: 20% !important;
+  width: 50% !important;
 }
 
 /* Improve tab sound icons */
