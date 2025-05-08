@@ -1,5 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+
+:root {
+  /* Color theme */
+  --zen-colors-primary: #2c2c2c !important;
+  --zen-primary-color: #303834 !important;
+  --zen-colors-secondary: #3f3f3f !important;
+  --zen-colors-border: #e0e0e0 !important;
+  --toolbarbutton-icon-fill: #e0e0e0 !important;
+  --lwt-text-color: #e0e0e0 !important;
+  --toolbar-field-color: #e0e0e0 !important;
+  --tab-selected-textcolor: #e0e0e0 !important;
+  --toolbar-field-focus-color: #e0e0e0 !important;
+  --toolbar-color: #e0e0e0 !important;
+  --newtab-text-primary-color: #e0e0e0 !important;
+  --arrowpanel-color: #e0e0e0 !important;
+  --arrowpanel-background: #222222 !important;
+  --sidebar-text-color: #e0e0e0 !important;
+  --lwt-sidebar-text-color: #e0e0e0 !important;
+  --lwt-sidebar-background-color: #1a1a1a !important;
+  --toolbar-bgcolor: #1a1a1a !important;
+  --newtab-background-color: #1a1a1a !important;
+  --toolbox-bgcolor-inactive: #1a1a1a !important;
+
+  --zen-main-browser-background: #1a1a1a !important;
+  /* With 50% noise */
+}
+
 * {
-  font-family: 'Bricolage Grotesque', 'Geist', monospace !important;
+  /* font-family: "Geist", monospace !important; */
+  font-family: "Bricolage Grotesque" !important;
   color: #dbd9d5 !important;
   font-weight: 500 !important;
 }
@@ -72,4 +101,28 @@
       background-color: unset !important;
     }
   }
+}
+
+/* Hide workspaces */
+
+.zen-current-workspace-indicator {
+  &::before {
+    display: none !important;
+  }
+}
+
+.zen-current-workspace-indicator {
+  & .zen-current-workspace-indicator-icon {
+    display: none !important;
+  }
+}
+
+.zen-current-workspace-indicator {
+  & .zen-current-workspace-indicator-name {
+    display: none !important;
+  }
+}
+
+#zen-tabs-wrapper {
+  margin-top: unset !important;
 }
