@@ -1,5 +1,4 @@
-###### Zen Mods
+###### Zen Mods, see settings in `userChrome.css`
 
 - Cleaned URL bar
 - Floating Status Bar
-- Tab Text Size (Text size: 14)

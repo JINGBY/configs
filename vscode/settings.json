@@ -13,7 +13,7 @@
 
   // Editor
   "editor.lineNumbers": "relative",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.detectIndentation": false,
   "editor.guides.indentation": false,
   "editor.linkedEditing": true,

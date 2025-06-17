@@ -1,31 +1,21 @@
 :root {
-  /* Color theme */
-  --zen-colors-primary: #2c2c2c !important;
-  --zen-primary-color: #303834 !important;
-  --zen-colors-secondary: #3f3f3f !important;
-  --zen-colors-border: #e0e0e0 !important;
-  --toolbarbutton-icon-fill: #e0e0e0 !important;
-  --lwt-text-color: #e0e0e0 !important;
-  --toolbar-field-color: #e0e0e0 !important;
-  --tab-selected-textcolor: #e0e0e0 !important;
-  --toolbar-field-focus-color: #e0e0e0 !important;
-  --toolbar-color: #e0e0e0 !important;
-  --newtab-text-primary-color: #e0e0e0 !important;
-  --arrowpanel-color: #e0e0e0 !important;
-  --arrowpanel-background: #222222 !important;
-  --sidebar-text-color: #e0e0e0 !important;
-  --lwt-sidebar-text-color: #e0e0e0 !important;
-  --lwt-sidebar-background-color: #1a1a1a !important;
-  --toolbar-bgcolor: #1a1a1a !important;
-  --newtab-background-color: #1a1a1a !important;
-  --toolbox-bgcolor-inactive: #1a1a1a !important;
-
   --zen-main-browser-background: #1a1a1a !important;
-  /* With 50% noise */
 }
 
+/*
+
+Mods settings
+
+Cleaned URL bar
+- hsl(0 0 10)
+- 0%
+- rgb(83, 124, 247, 0.8)
+- rgba(219, 217, 213, 1)
+
+*/
+
+
 * {
-  /* font-family: "Geist", monospace !important; */
   font-family: "Bricolage Grotesque" !important;
   color: #dbd9d5 !important;
   font-weight: 500 !important;
@@ -45,26 +35,19 @@
   padding: 1em !important;
 }
 
-/* Apply dimming to text aswell */
-#tabbrowser-tabs {
-  & .tabbrowser-tab {
-    @media (-moz-bool-pref: "zen.tabs.dim-pending") {
-      &[pending="true"] .tab-icon-image, &[pending="true"] .tab-text {
-        opacity: 0.2 !important;
-      }
-    }
-  }
+/* Apply dimming to unloaded tabs text */
+[pending][discarded] .tab-label-container {
+  opacity: 0.5;
+  transition: opacity 1s;
 }
 
-/* Center the search bar better */
+/* Position and scale search popup better */
 #urlbar[open][zen-floating-urlbar="true"] {
   top: 20% !important;
   width: 50% !important;
 }
 
-/* Improve tab sound icons */
-/* Icons from https://lucide.dev/icons/ */
-
+/* Improve tab sound icons, icons from https://lucide.dev/icons/ */
 .tab-icon-overlay {
   padding: unset !important;
 }
@@ -102,11 +85,15 @@
 }
 
 /* Hide workspaces */
-
 .zen-current-workspace-indicator {
   &::before {
     display: none !important;
   }
+}
+
+/* Fix workspace spacing */
+zen-workspace {
+    padding-top: 12px !important;
 }
 
 .zen-current-workspace-indicator {
