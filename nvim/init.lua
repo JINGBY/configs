@@ -829,7 +829,7 @@ require('lazy').setup({
 
         javascript = { 'prettier_if_present' },
         typescript = { 'prettier_if_present' },
-        svelte = { 'prettier_if_present' },
+        svelte = { 'prettier-plugin-svelte' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
         --[[ svelte = { 'prettierd', 'prettier', stop_after_first = true }, ]]
       },
@@ -940,7 +940,6 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    --[[ 'folke/tokyonight.nvim', ]]
     'cdmill/neomodern.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
@@ -952,18 +951,6 @@ require('lazy').setup({
         },
       }
       require('neomodern').load()
-
-      --[[ ---@diagnostic disable-next-line: missing-fields ]]
-      -- require('tokyonight').setup {
-      --   styles = {
-      --     comments = { italic = false }, -- Disable italics in comments
-      --   },
-      -- }
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      --[[ vim.cmd.colorscheme 'tokyonight-night' ]]
     end,
   },
 
