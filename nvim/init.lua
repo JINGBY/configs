@@ -24,6 +24,12 @@ vim.o.fillchars = 'eob: '
 -- Line breaks
 vim.o.wrap = true
 
+-- Navigate through diplayed lines so it works with line breaks
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('v', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('v', 'k', 'gk')
+
 -- Indentation
 vim.o.expandtab = false
 vim.o.shiftwidth = 2
