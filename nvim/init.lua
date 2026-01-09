@@ -22,7 +22,7 @@ vim.o.relativenumber = true
 vim.o.fillchars = 'eob: '
 
 -- Line breaks
-vim.o.wrap = false
+vim.o.wrap = true
 
 -- Indentation
 vim.o.expandtab = false
