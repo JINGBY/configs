@@ -1,113 +1,104 @@
-:root {
-  --zen-main-browser-background: #1a1a1a !important;
-}
-
 /*
-
-Mods settings
-
-Cleaned URL bar
-- hsl(0 0 10)
-- 0%
-- rgb(83, 124, 247, 0.8)
-- rgba(219, 217, 213, 1)
-
+ * See README for mods and settings
 */
 
+:root {
+	--zen-main-browser-background: #1a1a1a !important;
+}
 
 * {
-  font-family: "Bricolage Grotesque" !important;
-  color: #dbd9d5 !important;
-  font-weight: 500 !important;
+	font-family: "Bricolage Grotesque" !important;
+	color: #dbd9d5 !important;
+	font-weight: 500 !important;
 }
 
 .tab-content {
-  padding-block: 0.7em !important;
-  font-size: 15px !important;
+	padding-block: 0.6em !important;
+	font-size: 15px !important;
 }
 
 #vertical-pinned-tabs-container {
-  padding-top: 1em !important;
-  padding-bottom: 0.5em !important;
+	padding-top: 1em !important;
+	padding-bottom: 0.5em !important;
 }
 
 #navigator-toolbox {
-  padding: 1em !important;
+	padding: 1em !important;
 }
 
 /* Apply dimming to unloaded tabs text */
 [pending][discarded] .tab-label-container {
-  opacity: 0.5;
-  transition: opacity 1s;
+	opacity: 0.5;
+	transition: opacity 1s;
 }
 
 /* Position and scale search popup better */
 #urlbar[open][zen-floating-urlbar="true"] {
-  top: 20% !important;
-  width: 50% !important;
+	top: 30% !important;
+	width: 1200px !important;
 }
 
 /* Improve tab sound icons, icons from https://lucide.dev/icons/ */
 .tab-icon-overlay {
-  padding: unset !important;
+	padding: unset !important;
 }
 
 .tab-icon-overlay[soundplaying] {
-  list-style-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS12b2x1bWUtMiI+PHBhdGggZD0iTTExIDQuNzAyYS43MDUuNzA1IDAgMCAwLTEuMjAzLS40OThMNi40MTMgNy41ODdBMS40IDEuNCAwIDAgMSA1LjQxNiA4SDNhMSAxIDAgMCAwLTEgMXY2YTEgMSAwIDAgMCAxIDFoMi40MTZhMS40IDEuNCAwIDAgMSAuOTk3LjQxM2wzLjM4MyAzLjM4NEEuNzA1LjcwNSAwIDAgMCAxMSAxOS4yOTh6Ii8+PHBhdGggZD0iTTE2IDlhNSA1IDAgMCAxIDAgNiIvPjxwYXRoIGQ9Ik0xOS4zNjQgMTguMzY0YTkgOSAwIDAgMCAwLTEyLjcyOCIvPjwvc3ZnPg==") !important;
-  fill: unset !important;
-  width: 16px !important;
-  height: 16px !important;
+	list-style-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS12b2x1bWUtMiI+PHBhdGggZD0iTTExIDQuNzAyYS43MDUuNzA1IDAgMCAwLTEuMjAzLS40OThMNi40MTMgNy41ODdBMS40IDEuNCAwIDAgMSA1LjQxNiA4SDNhMSAxIDAgMCAwLTEgMXY2YTEgMSAwIDAgMCAxIDFoMi40MTZhMS40IDEuNCAwIDAgMSAuOTk3LjQxM2wzLjM4MyAzLjM4NEEuNzA1LjcwNSAwIDAgMCAxMSAxOS4yOTh6Ii8+PHBhdGggZD0iTTE2IDlhNSA1IDAgMCAxIDAgNiIvPjxwYXRoIGQ9Ik0xOS4zNjQgMTguMzY0YTkgOSAwIDAgMCAwLTEyLjcyOCIvPjwvc3ZnPg==") !important;
+	fill: unset !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 
 .tab-icon-overlay[muted] {
-  list-style-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS12b2x1bWUteCI+PHBhdGggZD0iTTExIDQuNzAyYS43MDUuNzA1IDAgMCAwLTEuMjAzLS40OThMNi40MTMgNy41ODdBMS40IDEuNCAwIDAgMSA1LjQxNiA4SDNhMSAxIDAgMCAwLTEgMXY2YTEgMSAwIDAgMCAxIDFoMi40MTZhMS40IDEuNCAwIDAgMSAuOTk3LjQxM2wzLjM4MyAzLjM4NEEuNzA1LjcwNSAwIDAgMCAxMSAxOS4yOTh6Ii8+PGxpbmUgeDE9IjIyIiB4Mj0iMTYiIHkxPSI5IiB5Mj0iMTUiLz48bGluZSB4MT0iMTYiIHgyPSIyMiIgeTE9IjkiIHkyPSIxNSIvPjwvc3ZnPg==") !important;
-  fill: unset !important;
-  width: 16px !important;
-  height: 16px !important;
+	list-style-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS12b2x1bWUteCI+PHBhdGggZD0iTTExIDQuNzAyYS43MDUuNzA1IDAgMCAwLTEuMjAzLS40OThMNi40MTMgNy41ODdBMS40IDEuNCAwIDAgMSA1LjQxNiA4SDNhMSAxIDAgMCAwLTEgMXY2YTEgMSAwIDAgMCAxIDFoMi40MTZhMS40IDEuNCAwIDAgMSAuOTk3LjQxM2wzLjM4MyAzLjM4NEEuNzA1LjcwNSAwIDAgMCAxMSAxOS4yOTh6Ii8+PGxpbmUgeDE9IjIyIiB4Mj0iMTYiIHkxPSI5IiB5Mj0iMTUiLz48bGluZSB4MT0iMTYiIHgyPSIyMiIgeTE9IjkiIHkyPSIxNSIvPjwvc3ZnPg==") !important;
+	fill: unset !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 
 .tab-icon-overlay {
-  &:not([indicator-replaces-favicon]) {
-    &:is([soundplaying], [muted], [activemedia-blocked]) {
-      top: 0px !important;
-      margin-left: 22px !important;
-      margin-right: 12px !important;
-    }
-  }
+	&:not([indicator-replaces-favicon]) {
+		&:is([soundplaying], [muted], [activemedia-blocked]) {
+			top: 0px !important;
+			margin-left: 22px !important;
+			margin-right: 12px !important;
+		}
+	}
 }
 
 .tab-icon-overlay {
-  &:not([crashed]) {
-    &:is([soundplaying], [muted], [activemedia-blocked]) {
-      background-color: unset !important;
-    }
-  }
+	&:not([crashed]) {
+		&:is([soundplaying], [muted], [activemedia-blocked]) {
+			background-color: unset !important;
+		}
+	}
 }
 
 /* Hide workspaces */
 .zen-current-workspace-indicator {
-  &::before {
-    display: none !important;
-  }
+	&::before {
+		display: none !important;
+	}
 }
 
 /* Fix workspace spacing */
 zen-workspace {
-    padding-top: 12px !important;
+	padding-top: 12px !important;
 }
 
 .zen-current-workspace-indicator {
-  & .zen-current-workspace-indicator-icon {
-    display: none !important;
-  }
+	& .zen-current-workspace-indicator-icon {
+		display: none !important;
+	}
 }
 
 .zen-current-workspace-indicator {
-  & .zen-current-workspace-indicator-name {
-    display: none !important;
-  }
+	& .zen-current-workspace-indicator-name {
+		display: none !important;
+	}
 }
 
 #zen-tabs-wrapper {
-  margin-top: unset !important;
+	margin-top: unset !important;
 }
