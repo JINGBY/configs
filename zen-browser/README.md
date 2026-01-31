@@ -4,9 +4,6 @@
 
 ###### Zen Mods
 
-- Cleaned URL bar
-hsl(0 0 10)
-0%
-#6477aa
+- Cleaned URL bar - hsl(0 0 10), 20%, #6477aa
 
 - Floating Status Bar
