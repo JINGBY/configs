@@ -1,0 +1,26 @@
+# hg-term-theme
+
+background = #111113
+foreground = #BBBAC1
+selection-background = #2A2A31
+selection-foreground = #BBBAC1
+
+cursor-color = #BBBAC1
+cursor-text = #171719
+
+palette = 0=#1D1D22
+palette = 1=#ABBCEB
+palette = 2=#BB99F9
+palette = 3=#DA93C1
+palette = 4=#7F9EF1
+palette = 5=#D88F82
+palette = 6=#6B6B99
+palette = 7=#65A0A6
+palette = 8=#2A2A31
+palette = 9=#BBC7E6
+palette = 10=#C4B0E8
+palette = 11=#E3A9CE
+palette = 12=#96ABE5
+palette = 13=#E29C90
+palette = 14=#A8A6DE
+palette = 15=#6FB2B9
