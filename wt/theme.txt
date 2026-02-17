@@ -1,0 +1,23 @@
+{
+		"background": "#111113",
+		"black": "#1D1D22",
+		"blue": "#7F9EF1",
+		"brightBlack": "#2A2A31",
+		"brightBlue": "#96ABE5",
+		"brightCyan": "#A8A6DE",
+		"brightGreen": "#C4B0E8",
+		"brightPurple": "#E29C90",
+		"brightRed": "#BBC7E6",
+		"brightWhite": "#6FB2B9",
+		"brightYellow": "#E3A9CE",
+		"cursorColor": "#BBBAC1",
+		"cyan": "#6B6B99",
+		"foreground": "#BBBAC1",
+		"green": "#BB99F9",
+		"name": "hg-term-theme",
+		"purple": "#D88F82",
+		"red": "#ABBCEB",
+		"selectionBackground": "#2A2A31",
+		"white": "#65A0A6",
+		"yellow": "#DA93C1"
+}
