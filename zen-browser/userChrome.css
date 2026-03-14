@@ -3,7 +3,15 @@
 */
 
 :root {
-	--zen-main-browser-background: #1a1a1a !important;
+  --zen-main-browser-background: #2B2B2B !important;
+  --in-content-page-background: #2B2B2B !important;
+}
+
+#browser,
+#appcontent,
+#tabbrowser-tabpanels,
+#tabbrowser-tabpanels browser {
+  background: #2B2B2B !important;
 }
 
 * {

@@ -1,6 +1,6 @@
 ###### Settings
 
-50% noise on bg, sidebar rightclick -> Edit Theme
+0% noise on bg, sidebar rightclick -> Edit Theme
 
 ###### Zen Mods
 
