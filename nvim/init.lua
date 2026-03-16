@@ -22,9 +22,9 @@ vim.o.wrap = false
 
 -- Indentation
 vim.o.expandtab = false
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
-vim.o.softtabstop = 2
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = "a"
@@ -97,6 +97,9 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Disable Q
 vim.keymap.set("n", "Q", "<Nop>")
 
+-- Great remap to preserve yank after pasting
+vim.keymap.set("x", "<leader>p", '"_dP')
+
 -- I know there is _ but this is much simpler, I don't like the default 0 behaviour
 vim.keymap.set("n", "0", "^")
 
@@ -105,9 +108,15 @@ vim.keymap.set("n", "0", "^")
 vim.keymap.set("n", "<C-j>", ":normal! 10j<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-k>", ":normal! 10k<CR>", { noremap = true, silent = true })
 
+-- Delete word in insert mode with ctrl backspace instead of defualt bind to <C-w>
+vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Open Oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
@@ -359,6 +368,18 @@ require("lazy").setup {
     end,
   },
 
+  { -- Oil file explorer
+    "stevearc/oil.nvim",
+    opts = {
+      skip_confirm_for_simple_edits = true,
+      view_options = {
+        show_hidden = true,
+      },
+    },
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
+  },
+
   -- LSP Plugins
   {
     -- Main LSP Configuration
@@ -592,17 +613,7 @@ require("lazy").setup {
           end
           return "make install_jsregexp"
         end)(),
-        dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
-        },
+        dependencies = {},
         opts = {},
       },
       "folke/lazydev.nvim",
@@ -669,37 +680,21 @@ require("lazy").setup {
     "echasnovski/mini.nvim",
     config = function()
       -- Better Around/Inside textobjects
-      --
-      -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-      --  - ci'  - [C]hange [I]nside [']quote
       require("mini.ai").setup { n_lines = 500 }
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
-      --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
       require("mini.surround").setup()
 
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
+      -- Simple statusline
       local statusline = require "mini.statusline"
       -- set use_icons to true if you have a Nerd Font
       statusline.setup { use_icons = vim.g.have_nerd_font }
 
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
+      -- Set the section for cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return "%2l:%-2v"
       end
-
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
 
@@ -729,7 +724,7 @@ require("lazy").setup {
   require "kickstart.plugins.autotag",
 }
 
--- Remove windows newlines on :w (usually brought in from copy-pasta)
+-- Remove windows newlines on :w (usually from copy-pasta)
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*" },
   command = ":%s/\\r//e",
