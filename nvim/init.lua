@@ -111,6 +111,21 @@ vim.keymap.set("n", "<C-k>", ":normal! 10k<CR>", { noremap = true, silent = true
 -- Delete word in insert mode with ctrl backspace instead of defualt bind to <C-w>
 vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
 
+-- Remap to indent to the right level even when at the wrong place when entering insert mode
+local function smart_insert(fallback)
+  if vim.fn.match(vim.fn.getline ".", "^\\s*$") >= 0 then
+    return '"_cc'
+  end
+  return fallback
+end
+
+vim.keymap.set("n", "i", function()
+  return smart_insert "i"
+end, { expr = true, noremap = true })
+vim.keymap.set("n", "a", function()
+  return smart_insert "a"
+end, { expr = true, noremap = true })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
