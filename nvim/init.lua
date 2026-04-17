@@ -1,93 +1,53 @@
--- Set <space> as the leader key
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
-
 -- [[ Options ]]
 
--- Make line numbers default
 vim.o.number = true
-
--- Relative line numers
 vim.o.relativenumber = true
-
--- Remove ugly tilde signs at the end of buffer
-vim.o.fillchars = "eob: "
-
--- Line breaks
+vim.o.fillchars = "eob: " -- Remove useless tilde signs at the end of buffer.
 vim.o.wrap = false
 
--- Indentation
-vim.o.expandtab = false
+-- NOTE: 4 works generally, prefably i would want to split so that frontend stuff does 2, the rest 4 or 8
+vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.o.mouse = "a"
-
--- Don't show the mode, since it's already in the status line
-vim.o.showmode = false
+vim.o.mouse = "a" -- Enable mouse mode, can be useful sometimes.
+vim.o.showmode = false -- Don't show the mode, since it's already in the status line.
 
 -- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+-- TODO: Decide what to do.
 vim.schedule(function()
   vim.o.clipboard = "unnamedplus"
 end)
 
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
+vim.o.breakindent = true -- Make wrapped text retain indentation level  NOTE: Only needed if wrap = true.
 vim.o.undofile = true
-
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
--- Keep signcolumn on by default
 vim.o.signcolumn = "yes"
 
--- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 250 -- Decrease update time.
+vim.o.timeoutlen = 300 -- Decrease mapped sequence wait time.
 
--- Decrease mapped sequence wait time
-vim.o.timeoutlen = 300
+vim.o.splitright = true -- I only want left/right splits.
+vim.o.inccommand = "split" -- Live substitution previews.
 
--- Configure how new splits should be opened
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.o.cursorline = true -- Highlight current line.
+vim.o.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
 
--- Preview substitutions live, as you type!
-vim.o.inccommand = "split"
-
--- Show which line your cursor is on
-vim.o.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
-
--- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
--- instead raise a dialog asking if you wish to save the current file(s)
--- See `:help 'confirm'`
-vim.o.confirm = true
+vim.o.confirm = true -- Ask for comfirmations before :q on unsaved changes.
 
 -- [[ Keymaps ]]
-
--- Center when scrolling up and down
+-- Centering
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
--- Center in search
 vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "n", "Nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
--- Move selected up and down
+-- Move selected up and down.
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -111,20 +71,23 @@ vim.keymap.set("n", "<C-k>", ":normal! 10k<CR>", { noremap = true, silent = true
 -- Delete word in insert mode with ctrl backspace instead of defualt bind to <C-w>
 vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
 
--- Remap to indent to the right level even when at the wrong place when entering insert mode
-local function smart_insert(fallback)
-  if vim.fn.match(vim.fn.getline ".", "^\\s*$") >= 0 then
-    return '"_cc'
+-- Remap to indent to the right level for empty lines when entering insert mode
+local function smart_insert(key)
+  return function()
+    local line = vim.fn.getline "."
+    if line:match "^%s*$" then
+      vim.cmd "normal! ^"
+      if line == "" then
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('"_cc', true, false, true), "n", false)
+        return
+      end
+    end
+    vim.api.nvim_feedkeys(key, "n", false)
   end
-  return fallback
 end
 
-vim.keymap.set("n", "i", function()
-  return smart_insert "i"
-end, { expr = true, noremap = true })
-vim.keymap.set("n", "a", function()
-  return smart_insert "a"
-end, { expr = true, noremap = true })
+vim.keymap.set("n", "i", smart_insert "i", { noremap = true })
+vim.keymap.set("n", "a", smart_insert "a", { noremap = true })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -159,27 +122,10 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
--- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
--- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
--- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
--- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.hl.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -188,8 +134,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+-- Install lazy plugin manager.
+-- TODO: Switch to the built-in plugin manager in 0.12 sometime.
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -203,11 +149,11 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
+-- Configure and install plugins.
 require("lazy").setup {
   "NMAC427/guess-indent.nvim", -- Detect tabstop and shiftwidth automatically
 
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  { -- Adds git related signs to the gutter, as well as utilities for managing changes.
     "lewis6991/gitsigns.nvim",
     opts = {
       signs = {
@@ -228,11 +174,8 @@ require("lazy").setup {
       -- this setting is independent of vim.o.timeoutlen
       delay = 0,
       icons = {
-        -- set icon mappings to true if you have a Nerd Font
-        mappings = vim.g.have_nerd_font,
-        -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-        -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
-        keys = vim.g.have_nerd_font and {} or {
+        mappings = false,
+        keys = {
           Up = "<Up> ",
           Down = "<Down> ",
           Left = "<Left> ",
@@ -292,9 +235,6 @@ require("lazy").setup {
         end,
       },
       { "nvim-telescope/telescope-ui-select.nvim" },
-
-      -- Useful for getting pretty icons, but requires a Nerd Font.
-      { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- [[ Configure Telescope ]]
@@ -383,7 +323,7 @@ require("lazy").setup {
     end,
   },
 
-  { -- Oil file explorer
+  {
     "stevearc/oil.nvim",
     opts = {
       skip_confirm_for_simple_edits = true,
@@ -391,16 +331,12 @@ require("lazy").setup {
         show_hidden = true,
       },
     },
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
   },
 
-  -- LSP Plugins
   {
-    -- Main LSP Configuration
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
       { "mason-org/mason.nvim", opts = {} },
       "mason-org/mason-lspconfig.nvim",
@@ -702,8 +638,7 @@ require("lazy").setup {
 
       -- Simple statusline
       local statusline = require "mini.statusline"
-      -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      statusline.setup { use_icons = false }
 
       -- Set the section for cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
