@@ -1,10 +1,7 @@
--- autotag
--- https://github.com/windwp/nvim-ts-autotag
-
 return {
-  'windwp/nvim-ts-autotag',
+  "windwp/nvim-ts-autotag",
   config = function()
-    require('nvim-ts-autotag').setup({
+    require("nvim-ts-autotag").setup {
       opts = {
         -- Defaults
         enable_close = true, -- Auto close tags
@@ -15,10 +12,10 @@ return {
       -- Empty by default, useful if one of the "opts" global settings
       -- doesn't work well in a specific filetype
       per_filetype = {
-        ['html'] = {
+        ["html"] = {
           enable_close = false,
         },
       },
-    })
+    }
   end,
 }
