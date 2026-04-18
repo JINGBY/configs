@@ -90,7 +90,14 @@
                 "input": "\u001b[57;5u"
             },
             "id": "User.tmux9"
-        }
+        },
+        {
+            "command": {
+                "action": "sendInput",
+                "input": "\u001b[9;5u"
+            },
+            "id": "User.ctrlTab"
+        },
     ],
     "alwaysShowTabs": false,
     "copyFormatting": "none",
@@ -149,7 +156,11 @@
         {
             "id": "User.tmux9",
             "keys": "ctrl+9"
-        }
+        },
+        {
+            "id": "User.ctrlTab",
+            "keys": "ctrl+tab"
+        },
     ],
     "launchMode": "default",
     "newTabMenu": 

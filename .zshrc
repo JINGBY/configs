@@ -4,6 +4,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 bindkey '^H' backward-kill-word
+bindkey '\e[9;5u' autosuggest-accept # C-Tab
 
 export BUN_INSTALL="$HOME/.bun"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
