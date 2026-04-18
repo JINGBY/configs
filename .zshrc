@@ -3,6 +3,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
+bindkey '^H' backward-kill-word
+
 export BUN_INSTALL="$HOME/.bun"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
