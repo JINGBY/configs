@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+selected=$(find ~/dev ~/.config -mindepth 1 -maxdepth 1 -type d | fzf \
+  --color=bg+:#1d1d22,bg:-1,hl:#abbceb \
+  --color=fg:-1,header:-1,info:-1,pointer:-1 \
+  --color=marker:-1,fg+:-1,prompt:-1,hl+:#a8a6de \
+  --color=gutter:-1 \
+  --no-bold \
+  --no-info \
+  --no-separator \
+  --pointer=' ' \
+  --marker=' ')
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+session_name=$(basename "$selected" | tr . _)
+
+if ! tmux has-session -t "$session_name" 2>/dev/null; then
+    tmux new-session -ds "$session_name" -c "$selected"
+fi
+
+if [[ -z $TMUX ]]; then
+    tmux attach -t "$session_name"
+else
+    tmux switch-client -t "$session_name"
+fi
