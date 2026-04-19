@@ -13,6 +13,7 @@ export BUN_INSTALL="$HOME/.bun"
 
 # PATH
 path=(
+  $HOME/.nix-profile
   $HOME/bin
   $HOME/.local/bin
   /usr/local/bin
