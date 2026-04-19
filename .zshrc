@@ -13,11 +13,10 @@ export BUN_INSTALL="$HOME/.bun"
 
 # PATH
 path=(
-  $HOME/.nix-profile
+  $HOME/.nix-profile/bin
   $HOME/bin
   $HOME/.local/bin
   /usr/local/bin
-  /opt/nvim-linux-x86_64/bin
   $BUN_INSTALL/bin
   $HOME/.platformio/penv/bin
   $HOME/.opencode/bin
