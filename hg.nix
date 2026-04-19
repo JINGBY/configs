@@ -50,6 +50,9 @@
       bindkey '\e[9;5u' autosuggest-accept
       export BUN_INSTALL="$HOME/.bun"
       [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
     '';
     sessionVariables = {
       PATH = "$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.bun/bin:$HOME/.platformio/penv/bin:$HOME/.opencode/bin:$PATH";
