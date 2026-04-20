@@ -15,6 +15,7 @@ path=(
   $HOME/bin
   $HOME/.local/bin
   /usr/local/bin
+  /opt/nvim-linux-x86_64/bin
   $BUN_INSTALL/bin
   $HOME/.platformio/penv/bin
   $HOME/.opencode/bin
