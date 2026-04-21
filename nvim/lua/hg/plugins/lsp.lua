@@ -35,8 +35,14 @@ return {
         map("gO", builtin.lsp_document_symbols, "Open Document Symbols")
         map("gW", builtin.lsp_dynamic_workspace_symbols, "Open Workspace Symbols")
 
-        -- Keymap to toggle inlay hints in your code, if the language server you are using supports them.
         local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+        -- Disble native color highlighting, I do not like it.
+        if client and client.server_capabilities.colorProvider then
+          vim.lsp.document_color.enable(false, { bufnr = event.buf })
+        end
+
+        -- Keymap to toggle inlay hints in your code, if the language server you are using supports them.
         if client and client:supports_method("textDocument/inlayHint", event.buf) then
           map("<leader>th", function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
