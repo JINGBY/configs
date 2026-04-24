@@ -5,6 +5,7 @@ brew "fzf"
 brew "ripgrep"
 brew "fd"
 brew "tree-sitter"
+brew "tree-sitter-cli"
 
 cask "ghostty"
 cask "zen"
