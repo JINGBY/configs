@@ -6,22 +6,16 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^H' backward-kill-word
 bindkey '\e[9;5u' autosuggest-accept # C-Tab
 
-export BUN_INSTALL="$HOME/.bun"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 
-# PATH
+export BUN_INSTALL="$HOME/.bun"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+
 path=(
-  $HOME/.nix-profile/bin
-  $HOME/bin
   $HOME/.local/bin
-  /usr/local/bin
-  /opt/nvim-linux-x86_64/bin
+  $HOME/bin
   $BUN_INSTALL/bin
-  $HOME/.platformio/penv/bin
-  $HOME/.opencode/bin
   $path
 )
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
