@@ -1,15 +1,14 @@
 ### Setup
 
-`git clone https://github.com/JINGBY/configs.git`
-`chmod +x symlink.sh`
-`./symlink.sh`
+```bash
+cd ~ 
+git clone https://github.com/JINGBY/configs.git
+```
 
-### Dependencies
+```bash
+chmod +x ./mac.sh
+```
 
-git
-neovim >=0.12
-node
-fzf
-ripgrep
-fd
-tree-sitter
+```bash
+./mac.sh
+```
