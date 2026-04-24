@@ -10,14 +10,16 @@
 # reloaded while running; some only apply to new windows and others may require
 # a full restart to take effect.
 
-font-family = "monospace"
+font-family = "SF Mono Terminal"
+font-style = Medium
+font-style-bold = SemiBold
 
 theme = hg
 
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
-cursor-color = #C0Caf5
+cursor-color = #c0caf5
 
 window-padding-x = 4
 window-padding-y = 4
