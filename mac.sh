@@ -10,6 +10,11 @@ killall Finder 2>/dev/null || true
 
 brew bundle --file="$CONFIGS/Brewfile"
 
+SF_MONO_SRC="/System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts"
+if ! ls ~/Library/Fonts/SFMono-* &>/dev/null; then
+  cp "$SF_MONO_SRC"/SFMono-* ~/Library/Fonts/
+fi
+
 if [ ! -d "$HOME/.nvm" ]; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 fi
