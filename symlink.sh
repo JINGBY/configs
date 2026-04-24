@@ -17,8 +17,8 @@ link() {
 mkdir -p \
   ~/.config/ghostty \
   ~/.config/tmux \
-  ~/.local/bin
   ~/.config/nvim \
+  ~/.local/bin
 
 link "$CONFIGS/ghostty" ~/.config/ghostty
 link "$CONFIGS/.zshrc" ~/.zshrc

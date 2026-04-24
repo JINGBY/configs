@@ -7,7 +7,7 @@ brew "fd"
 brew "tree-sitter"
 
 cask "ghostty"
-cask "zen-browser"
+cask "zen"
 cask "raycast"
 cask "karabiner-elements"
 cask "nikitabobko/tap/aerospace"
