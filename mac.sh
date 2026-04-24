@@ -33,6 +33,6 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
     "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
 fi
 
-bash "$CONFIGS/symlink.sh"
+bash "$CONFIGS/symlink.sh" --mac
 
 echo "Done"
