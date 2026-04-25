@@ -14,6 +14,8 @@ font-family = "SF Mono Terminal"
 font-style = Medium
 font-style-bold = SemiBold
 
+font-size = 16
+
 theme = hg
 
 cursor-style = block
@@ -21,9 +23,11 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 cursor-color = #c0caf5
 
-window-padding-x = 4
+window-padding-x = 12
 window-padding-y = 4
-window-padding-color = extend-always
+window-padding-color = extend
+
+macos-titlebar-style = hidden
 
 copy-on-select = false
 right-click-action = context-menu

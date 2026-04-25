@@ -3,347 +3,524 @@
         {
             "complex_modifications": {
                 "rules": [
+                {
+                    "description": "Common cmd to control remaps",
+                    "manipulators": [
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "a", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "a", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "b", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "b", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "c", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "c", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "v", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "v", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "x", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "x", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "i", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "i", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "f", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "f", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "n", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "n", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "s", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "s", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "z", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "z", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "y", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "z", "modifiers": [ "command", "shift" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "t", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "t", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "w", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "w", "modifiers": [ "command" ] } ],
+                            "type": "basic"
+                        },
+                        {
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_unless" } ],
+                            "from": { "key_code": "delete_or_backspace", "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] } },
+                            "to": [ { "key_code": "delete_or_backspace", "modifiers": [ "option" ] } ],
+                            "type": "basic"
+                        }
+                    ]
+                },
+                {
+                    "description": "Right command + number row replaces option + number row",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "1", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "1", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "2", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "2", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "3", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "3", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic", "from": { "key_code": "4", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "4", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "5", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "5", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "6", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "6", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "7", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "8", "modifiers": [ "right_option", "shift" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "8", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "8", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "9", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "9", "modifiers": [ "right_option" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "0", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "9", "modifiers": [ "right_option", "shift" ] } ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": { "key_code": "non_us_backslash", "modifiers": { "mandatory": [ "right_command" ] } },
+                            "to": [ { "key_code": "7", "modifiers": [ "right_option" ] } ]
+                        }
+                    ]
+                },
+                {
+                    "description": "aerospace",
+                    "manipulators": [
                     {
-                        "description": "hg",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "a",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "b",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "c",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "v",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "x",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "i",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "n",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "s",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["command", "shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "w",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
+                        "type": "basic",
+                        "from": { "key_code": "h", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace focus left" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "h", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move left" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "j", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace focus down" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "j", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move down" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "k", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace focus up" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "k", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move up" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "l", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace focus right" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "l", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move right" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "hyphen", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace resize smart +50" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "slash", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace resize smart -50" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "tab", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace-back-and-forth" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "1", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 1" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "1", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 1" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "2", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 2" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "2", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 2" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "3", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 3" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "3", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 3" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "4", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 4" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "4", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 4" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "5", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 5" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "5", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 5" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "6", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 6" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "6", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 6" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "7", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 7" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "7", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 7" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "8", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 8" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "8", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 8" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "9", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace 9" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "9", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 9" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "a", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace A" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "a", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace A" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "b", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace B" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "b", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace B" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "c", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace C" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "c", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace C" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "d", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace D" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "d", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace D" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "e", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace E" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "e", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace E" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "f", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace F" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "f", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace F" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "g", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace G" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "g", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace G" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "i", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace I" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "i", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace I" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "m", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace M" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "m", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace M" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "n", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace N" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "n", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace N" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "o", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace O" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "o", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace O" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "p", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace P" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "p", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace P" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "q", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace Q" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "q", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace Q" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "r", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace R" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "r", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace R" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "s", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace S" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "s", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace S" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "t", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace T" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "t", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace T" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "u", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace U" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "u", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace U" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "v", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace V" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "v", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace V" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "w", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace W" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "w", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace W" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "x", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace X" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "x", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace X" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "y", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace Y" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "y", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace Y" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "z", "modifiers": { "mandatory": ["left_option"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace workspace Z" }]
+                    },
+                    {
+                        "type": "basic",
+                        "from": { "key_code": "z", "modifiers": { "mandatory": ["left_option", "shift"] } },
+                        "to": [{ "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace Z" }]
                     }
+                    ]
+                }
                 ]
             },
             "name": "Default profile",
@@ -368,9 +545,17 @@
                 {
                     "from": { "key_code": "left_option" },
                     "to": [{ "key_code": "left_command" }]
+                },
+                {
+                    "from": { "key_code": "non_us_backslash" },
+                    "to": [{ "key_code": "grave_accent_and_tilde" }]
+                },
+                {
+                    "from": { "key_code": "grave_accent_and_tilde" },
+                    "to": [{ "key_code": "non_us_backslash" }]
                 }
             ],
-            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
+            "virtual_hid_keyboard": {"keyboard_type_v2": "iso"}
         }
     ]
 }
