@@ -152,6 +152,65 @@
                     ]
                 },
                 {
+                    "description": "tmux window switching C-1 to C-9 in Ghostty",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "1", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 1 || /opt/homebrew/bin/tmux new-window -t 1 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "2", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 2 || /opt/homebrew/bin/tmux new-window -t 2 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "3", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 3 || /opt/homebrew/bin/tmux new-window -t 3 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "4", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 4 || /opt/homebrew/bin/tmux new-window -t 4 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "5", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 5 || /opt/homebrew/bin/tmux new-window -t 5 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "6", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 6 || /opt/homebrew/bin/tmux new-window -t 6 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "7", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 7 || /opt/homebrew/bin/tmux new-window -t 7 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "8", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 8 || /opt/homebrew/bin/tmux new-window -t 8 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        },
+                        {
+                            "type": "basic",
+                            "conditions": [ { "bundle_identifiers": [ "com.mitchellh.ghostty" ], "type": "frontmost_application_if" } ],
+                            "from": { "key_code": "9", "modifiers": { "mandatory": [ "left_control" ] } },
+                            "to": [ { "shell_command": "/opt/homebrew/bin/tmux select-window -t 9 || /opt/homebrew/bin/tmux new-window -t 9 -c \"$(/opt/homebrew/bin/tmux display-message -p '#{pane_current_path}')\"" } ]
+                        }
+                    ]
+                },
+                {
                     "description": "aerospace",
                     "manipulators": [
                     {
